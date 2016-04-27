@@ -1,0 +1,16 @@
+html(ng-app="appSockets")
+    head
+        title Hola Sockets
+    body(ng-controller="chatCtrl")
+        ul(ng-repeat="m in mensajes")
+            li {{m.text}}
+            
+        form
+            input(type="text" ng-model="obj.text")
+            input(type="text" ng-model="obj.emisor")
+            button(ng-click="enviarMensajeNuevo()" text="Enviar")
+            
+    
+        script(src="/socket.io/socket.io.js")
+        script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js")
+        script(src="app.js") 
